@@ -1,10 +1,23 @@
-# Getting Started with Create React App
+# Find challenge 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The app deployed at https://arcane-eyrie-90125.herokuapp.com/
+### Goal
 
-## Available Scripts
+The goal of this task is to implement the `Find Challenge`. It's a modification of the [word search game](https://lovattspuzzles.com/online-puzzles-competitions/play-daily-word-search-puzzle-online/). Instead of finding a list of words in the grid, the user needs to find all possible translations of one given word.
 
-In the project directory, you can run:
+### Specification
+
+You are given a word `source` and a list of translations `targets`. Your task is to display the word `source` and a grid of letters that contains all the `targets`. 
+
+The user's task is to find all the translations in the grid. The user selects a word by clicking on the first letter, dragging the mouse to the last letter, and releasing the mouse. 
+
+When the selected word is a valid translation of the source word, it should stay highlighted. Otherwise, the selection should disappear. After all targets have been found, the app should display a new grid and a new source word. Your app's source data should be the contents of [this file](https://www.notion.so/1143bda5671a922436bb4d0130f449e3). Each line contains a JSON object.
+
+**Here is a spec for the file format:**
+
+- `word:` the source word
+- `character_grid:` the character grid to be shown
+- `word_locations:` a dictionary where each key is a list of coordinates in the format: x1, y1, x2, y2, ..., xn, yn and the value is the target word in that location.
 
 ### `yarn start`
 
