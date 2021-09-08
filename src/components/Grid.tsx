@@ -71,7 +71,7 @@ export default function Grid({ wordLocations, onRestart, characters }: Props) {
   })
 
   return (
-    <div>
+    <div data-testid={'gridContainer'}>
       {gameOver && <SuccessOverlay onClick={resetGame}/>}
       <div style={styles}>
         {characters.map((row, index) => (

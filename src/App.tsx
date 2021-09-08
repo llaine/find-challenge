@@ -1,6 +1,5 @@
 import React, { CSSProperties, useEffect, useState } from 'react';
 import { DndContext } from '@dnd-kit/core';
-import './App.css';
 import Grid from './components/Grid';
 import findChallenge from './find_challenge.json'
 

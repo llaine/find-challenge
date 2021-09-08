@@ -2,7 +2,7 @@ import { useDraggable, useDroppable } from '@dnd-kit/core';
 import { CSSProperties } from 'react';
 import { HistoryItem } from '../App';
 
-interface Props {
+export interface Props {
   letter: string
   gridPosition: [number, number]
   pathTaken: Array<HistoryItem>
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const styles = {
-  padding: 10,
+  padding: 15,
   height: 20,
   width: 20,
   textAlign: 'center',
@@ -27,7 +27,8 @@ export default function Letter(props: Props) {
   });
 
   return (
-    <div style={{ background: props.overed ? 'orange' : 'white' }} ref={setNodeRefDroppable}>
+    <div style={{ background: props.overed ? 'orange' : 'white' }} data-testid={'letterContainer'}
+         ref={setNodeRefDroppable}>
       <div style={styles} ref={setNodeRef}
            {...listeners}
            {...attributes}>
