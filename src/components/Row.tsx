@@ -1,12 +1,12 @@
 import React, { CSSProperties } from 'react';
-import isLetterInArrayOfHistory from '../services/letterInArrayOfHistory';
+import isLetterInHistory from '../services/isLetterInHistory';
 import { HistoryItem } from '../App';
 import Letter from './Letter';
 
 export interface Props {
   rowNumber: number
   characters: Array<string>
-  pathTaken: Array<HistoryItem>
+  history: Array<HistoryItem>
 }
 
 const styles = {
@@ -17,15 +17,15 @@ export default function Row(props: Props) {
   return (
     <div style={styles} data-testid={'rowContainer'}>
       {props.characters.map((character, i) => {
-        const overed = isLetterInArrayOfHistory({
+        const overed = isLetterInHistory({
           row: props.rowNumber.toString(),
-          line: i.toString()
-        }, props.pathTaken)
+          column: i.toString()
+        }, props.history)
         return <Letter
           key={i}
           overed={overed}
-          gridPosition={[props.rowNumber, i]}
-          pathTaken={props.pathTaken}
+          positionOnGrid={[props.rowNumber, i]}
+          history={props.history}
           letter={character}/>
       })}
     </div>

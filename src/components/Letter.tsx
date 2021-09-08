@@ -4,8 +4,8 @@ import { HistoryItem } from '../App';
 
 export interface Props {
   letter: string
-  gridPosition: [number, number]
-  pathTaken: Array<HistoryItem>
+  positionOnGrid: [number, number]
+  history: Array<HistoryItem>
   overed: boolean
 }
 
@@ -17,7 +17,7 @@ const styles = {
 } as CSSProperties
 
 export default function Letter(props: Props) {
-  const [positionX, positionY] = props.gridPosition
+  const [positionX, positionY] = props.positionOnGrid
   const { setNodeRef, listeners, attributes } = useDraggable({
     id: `draggable-${positionX}-${positionY}`,
     disabled: props.overed

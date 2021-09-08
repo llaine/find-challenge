@@ -5,8 +5,8 @@ import Letter, { Props } from '../Letter';
 
 const defaultProps: Props = {
   letter: 'f',
-  gridPosition: [0, 0],
-  pathTaken: [],
+  positionOnGrid: [0, 0],
+  history: [],
   overed: false
 }
 

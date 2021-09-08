@@ -6,11 +6,11 @@ import { HistoryItem } from '../App';
  */
 export default function wordLocationFormatter(pathHorizontal: string): Array<HistoryItem> {
   const winningPath = pathHorizontal.split(',')
-  const finalPath: Array<{ row: string, line: string }> = []
+  const finalPath: Array<HistoryItem> = []
   for (let i = 0; i < winningPath.length; i++) {
     if (i % 2 === 0) {
       finalPath.push({
-        line: winningPath[i],
+        column: winningPath[i],
         row: winningPath[i + 1]
       })
     }

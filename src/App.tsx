@@ -11,7 +11,7 @@ interface Word {
   target_language: string
 }
 
-export type HistoryItem = { row: string, line: string }
+export type HistoryItem = { row: string, column: string }
 
 const styles = {
   display: 'flex',
@@ -21,6 +21,7 @@ const styles = {
 
 function App() {
   const [currentWord, setCurrentWord] = useState<Word | undefined>()
+  // Forcing typing coming from file.
   const words = findChallenge.words as unknown as Array<Word>
   function movesToNextWord() {
     const index = words.findIndex(word => currentWord?.word === word.word)

@@ -45,7 +45,7 @@ export default function Grid({ wordLocations, onRestart, characters }: Props) {
       if (position) {
         const item = {
           row: position && position[1],
-          line: position && position[2]
+          column: position && position[2]
         }
         setHistory([...history, item])
       }
@@ -75,7 +75,7 @@ export default function Grid({ wordLocations, onRestart, characters }: Props) {
       {gameOver && <SuccessOverlay onClick={resetGame}/>}
       <div style={styles}>
         {characters.map((row, index) => (
-          <Row pathTaken={history} key={index} rowNumber={index} characters={row}/>
+          <Row history={history} key={index} rowNumber={index} characters={row}/>
         ))}
       </div>
     </div>

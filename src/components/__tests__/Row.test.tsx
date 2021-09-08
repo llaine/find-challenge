@@ -5,7 +5,7 @@ import Row, {Props} from '../Row'
 const defaultProps: Props = {
   rowNumber: 1,
   characters: ['a', 'b', 'c'],
-  pathTaken: []
+  history: []
 }
 
 const setup = (setupProps?: Partial<Props>) => {
